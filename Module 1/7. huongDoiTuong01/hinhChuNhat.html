@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id='canvas1' width="500" height="400" style="background:yellowgreen; border:yellow 5px"></canvas>
+    <script>
+        
+        
+        function rectangle(length, width) {
+            this.length = length;
+            this.width = width;
+            this.calculate = function() {
+                return 'Diện tích = ' + length*width +'. Chu vi = ' + (length + width)*2
+            }
+        }
+        area= new rectangle(a,b)
+        alert(area.calculate())
+        
+        var a= parseInt(prompt('length = ?'));
+        var b= parseInt(prompt('width = ?'));
+        function drawRectangle(a, b) {
+           
+            var rect = document.getElementById('canvas1');
+            var ctx = rect.getContext('2d')
+            ctx.fillStyle = 'blue';
+            return ctx.fillRect (50,50, a, b)
+        }
+        drawRectangle(a, b)
+        
+    </script>
+</body>
+</html>

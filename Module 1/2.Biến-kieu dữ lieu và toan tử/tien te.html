@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+    #ketqua {
+        margin: 0px;
+        background : aquamarine;
+        padding: 0px;
+        width: 12%;
+            }
+   
+    </style>
+</head>
+<body>
+   
+        <h1>Amount</h1> <br\>
+        <input type='number'  id= 'sotien' value=''>
+        <input type='button'  id= 'convert' value='convert' onclick="chuyentien()">
+        <div id='ketqua'>Kết quả là: </div>
+        
+        <h1>From Currency</h1> <br\>
+        <select>
+            <option value="USD">USD</option>
+        </select>
+        
+        <h1>To Curreny</h1> <br\>
+        <select>
+            <option value='VND'>VND</option>
+        </select>
+  
+    
+    
+    <script>
+        function chuyentien() {
+        var amount = document.getElementById('sotien').value;
+        var vnd= amount*23000 ;
+        document.getElementById('ketqua').innerHTML='Kết quả là: ' +  vnd + ' VND';
+        
+        }
+    </script>  
+                  
+</body>
+</html>

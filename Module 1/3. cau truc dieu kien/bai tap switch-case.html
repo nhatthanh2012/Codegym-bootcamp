@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tinh so ngay</title>
+</head>
+<body>
+    <form>
+        <input type='text' id='tinhSoNgay' name= 'tinhSoNgay' value=''>
+        <button onclick= 'tinhMonth();'>Tính số ngày</button>
+        
+    </form>
+    <script>
+        function tinhMonth() 
+        {
+        var inputmonth= document.getElementById('tinhSoNgay').value 
+        var month= parseInt(inputmonth)                
+        
+        switch(month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: {
+                alert('tháng có 31 ngày')
+                break
+            } case 4:
+            case 6:
+            case 9:
+            case 11: {
+                alert('tháng có 30 ngày')
+                break
+            } case 2: {
+                alert('tháng có 28 hoặc 29 ngày')
+            }
+        }
+        }
+    </script>
+</body>
+</html>
