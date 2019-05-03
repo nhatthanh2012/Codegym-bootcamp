@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>countDownt</title>
+</head>
+<style>
+    #dongho{
+        margin: 30px;
+        font-size: 100px;
+        font-family: 'Trebuchet MS';
+        color: aqua;
+        background: gray;
+    }
+</style>
+<body>
+    <div id=  'dongho'>   
+    </div>
+    <script>
+        var so = 10;
+        function demNguoc() {
+            so--
+            if(so!=0){
+                document.getElementById('dongho').innerHTML= so
+                setTimeout(demNguoc, 1000)
+            }
+            else 
+            {
+                document.getElementById('dongho').innerHTML = "TIME OUT !!!"
+            }
+        } 
+        demNguoc();
+    </script>
+</body>
+</html>

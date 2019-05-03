@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function maxMinAvg(arr) {
+            //your code here 
+            var max = arr[0];
+            var min = arr[0];
+            var avg = 0;
+            var sum = 0;
+            var arrnew = []
+            for (i = 0; i < arr.length; i++) {
+                
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            arrnew.push(max)
+
+            for (i = 0; i < arr.length; i++) {
+                
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            arrnew.push(min)
+
+            for (i = 0; i < arr.length; i++) {
+                sum = sum + arr[i];
+                avg = sum / arr.length;
+
+            } 
+            arrnew.push(avg)
+
+            return console.log(arrnew);
+        }
+        var arr1 = [1,5,10,-2]
+        maxMinAvg(arr1)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // in ra day fibonaci <100
+    // 1,1,2,3,5,8,13,21
+    function fibonaci(n){
+        var a = 1;
+        var b= 1;
+        var c= a +b;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        while(c<100){
+            a=b;
+            b=c
+            c=a+b
+            console.log(c);
+
+        }
+    }
+    fibonaci(10)
+    </script>
+</body>
+</html>

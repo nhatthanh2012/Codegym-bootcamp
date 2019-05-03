@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type='text' id='text'>
+    <textarea id='kytu' onkeyup="kiemtra()">So ky tu></textarea>
+    
+    <script>
+        function kiemtra(){
+            var text = document.getElementById('text').value;
+        dodai = text.length;
+        
+        if (dodai > 200) {
+            alert('ban da vuot qua so ky tu cho phep')
+        }
+        }
+        
+    </script>
+</body>
+
+</html>

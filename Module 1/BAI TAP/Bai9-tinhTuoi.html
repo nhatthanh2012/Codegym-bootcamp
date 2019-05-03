@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var thoigian = new Date();
+        namsinh = eval(prompt('nhap nam sinh'))
+        namHienTai = thoigian.getFullYear();
+        sotuoi = namHienTai - namsinh;
+        if (namsinh<namHienTai) {
+            document.write('nam nay ban: '+sotuoi + ' tuoi' )
+        } else {
+            alert('ban nhap sai ')
+         
+        }
+        
+        
+        
+        
+        // do{
+        //     var namsinh = parseInt(prompt(' nhap nam sinh'));
+        // } while(namsinh<namHienTai){
+        //     sotuoi = namHienTai - namsinh;
+        //     alert(sotuoi+ 'tuoi')
+        // }
+
+        
+        // var D = new Date();
+        //     var NamSinh, NamHienTai;
+        //     NamHienTai = D.getYear(); //Lưu năm hiện tại vào biến
+        //     do {
+        //         NamSinh = prompt("Bạn sinh năm bao nhiêu : ", "");
+        //     } while (parseInt(NamSinh) > NamHienTai); //Nhập lại nếu Năm sinh>năm hiện tại
+        //     alert("Tuổi của bạn bây giờ là : " + (NamHienTai - NamSinh));
+        </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>    
+
+        
+</head>
+<body>
+        <div>
+            <ul id='student-list' >
+                       
+            </ul>
+        </div>
+    <script>
+        var students = [ 
+            {
+                name: 'TRAN VAN NAM',
+                classes: '12A',
+                age: '18t',
+            },
+            {
+                name: 'NGUYEN QUANG HAI',
+                classes: '12A',
+                age: '18t',
+            },
+            {
+                name: 'BUI TIEN DUNG',
+                classes: '12A',
+                age: '18t',
+            }
+        ]         
+        var html = '';
+        for(i=0; i<students.length; i++) {
+            var student = students[i]
+            html += '<li>'
+            html += '<h5>' + student.name + '</h5>'
+            html += '<p>' +student.classes + '</p>'
+            html += '<p>' +student.age + '</p>'
+            html += '</li>'   
+        } 
+        document.getElementById('student-list').innerHTML =  html;
+        
+        
+    
+    </script>
+    
+</body>
+</html>

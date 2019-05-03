@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function formDangKy() {
+            var frm = document.forms['dangky'];
+            // kiem tra ho ten
+            var fullname = frm['hoten'].value
+            if (fullname == '') {
+                alert('vui lòng nhập họ tên')
+                return false;
+            }
+            // kiem tra thang
+            var month = frm['chonThang'].value;
+            if (month.selectedIndex == 0) {
+                alert('vui lòng chọn tháng')
+                return false
+            }
+
+            // kiem tra năm
+            var year = frm['namSinh'].value;
+            if (year == '') {
+                alert('vui lòng nhập năm sinh')
+                return false
+            } else {
+                if (isNaN(year)) {
+                    alert('Năm sinh phải là số')
+                    return false
+                } else {
+                    var ns = parseInt(year);
+                    var ngayHienTai = new Date();
+                    var namHienTai = ngayHienTai.getFullYear();
+                    if (ns <= 0 || ns > namHienTai) {
+                        return false
+                    }
+                }
+            }
+            return true
+        }
+    </script>
+</head>
+<body>
+    <form id='dangky' action="http://cntt.phuxuan.edu.vn/" method="post" onsubmit="return formDangKy()">
+    <table>
+        <tr>
+            <td>Họ Tên: </td>
+            <td><input type='text' id='hoten' placeholder="nhập họ tên" ><br /></td>
+        </tr>
+        <tr>
+            <td>Tháng sinh:</td>
+            <td>
+                <select id='chonThang'>
+                    <option>Chọn tháng</option>
+                    <option>Tháng 1</option>
+                    <option>Tháng 2</option>
+                    <option>Tháng 3</option>
+                    <option>Tháng 5</option>
+                    <option>Tháng 6</option>
+                    <option>Tháng 7</option>
+                    <option>Tháng 8</option>
+                    <option>Tháng 9</option>
+                    <option>Tháng 10</option>
+                    <option>Tháng 11</option>
+                    <option>Tháng 12</option>
+                </select><br />
+            </td>
+        </tr>
+        <tr>
+            <td>Năm sinh:</td>
+            <td><input type='text' id='namSinh' placeholder="nhập năm sinh"><br /></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type='text' id='email' placeholder="nhập email"><br /></td>
+        </tr>
+        <tr>
+            <td colspan=2><input type='submit' id='submit' value='Đăng ký ' ></td>
+            
+        </tr>
+    </table>
+    
+</form>
+
+</body>
+</html>

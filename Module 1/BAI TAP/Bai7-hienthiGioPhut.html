@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div{
+    margin: 60px;
+font-family: 5em;
+font-size: 100px;
+color: blue;
+background: red;
+
+}
+</style>
+<body>
+    <div id='dongho'></div>
+    <script>
+        function hienthi(){
+        var thoiGian = new Date();
+        gio = thoiGian.getHours();
+        phut = thoiGian.getMinutes();
+        giay = thoiGian.getSeconds();
+        document.title = 'bây giờ là '+ gio+ ' giờ, '+phut+ 'phút, '+ giay + 'giây'
+        document.getElementById('dongho').innerHTML ='bây giờ là '+ gio+ ' giờ, '+phut+ 'phút, '+ giay + 'giây'
+            setTimeout(hienthi, 1000)
+    }
+    hienthi()
+    </script>
+</body>
+</html>
