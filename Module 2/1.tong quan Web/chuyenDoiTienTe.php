@@ -25,7 +25,7 @@ h2{
         if($_SERVER["REQUEST_METHOD"]==='POST'){
             $sotien = $_POST['sotien'];
             $tuychon= $_POST['tuychon'];
-        } 
+        
         $result = 0;
         switch($tuychon){
             case 'usd': 
@@ -35,7 +35,9 @@ h2{
                 $result = $sotien*23000;
                 break;
         }
-        echo $result;        
+     
+        echo $result; 
+    }       
     ?>
 
 </body>

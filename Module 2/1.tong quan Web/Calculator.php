@@ -33,7 +33,7 @@
             $soA=  $_POST['soA'];
             $soB=  $_POST['soB'];
             $pheptinh= $_POST['pheptinh'];
-        };
+        
         $result=0;
         switch ($pheptinh) {
             case 'phepcong':
@@ -50,6 +50,7 @@
                 break;
         }
         echo 'KẾT QUẢ LÀ: ' . $result;
+    };
     ?>
 
     
