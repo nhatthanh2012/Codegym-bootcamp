@@ -8,25 +8,21 @@
 </head>
 <body>
     <?php
-         const SLOW =1;
-         const MEDIUM =2;
-         const FAST =3;
+        const SLOW = 1;
+        const MEDIUM = 2;
+        const FAST = 3;
         class Fan 
-        {   
-           
+        {               
             private $speed = SLOW;
-            private $On = false; //tat
+            private $On = true; //tat
             private $radius= 5;
             private $color= 'blue';
             //set
             function setFan(){
-                return $this->speed = $speed;
-            
-                return $this->On = $On;//false
-          
-                return $this->radius = $radius;
-          
-                return $this->color = $color;
+                 $this->speed = $speed;            
+                 $this->On = $On;//false          
+                 $this->radius = $radius;          
+                 $this->color = $color;
             }
             //get
             function getSpeed(){

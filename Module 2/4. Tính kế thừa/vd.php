@@ -10,7 +10,7 @@
             $this->username = $arr['username'];
             $this->userId = $arr['userId'];
             $this->email = $arr['email'];
-            $this->password =$arr['password'];
+            $this->password =$arr['password']
 
         }         
         
@@ -24,8 +24,8 @@
 
     class Admin extends User
     {
-        function __construct($arr,$_accessLevel){
-            parent::__construct($arr);
+        function __construct($_username, $_userId, $_email, $_password,$_accessLevel){
+            parent::__construct($_username, $_userId, $_email, $_password);
             $this->accesslevel = $_accessLevel;
         }
        function editUser($_username2){
@@ -36,12 +36,13 @@
         echo 'user logout suceed';
         }
         function userlogout(){
-           parent::logout();
+            echo ' logout suceed';
         }
     }
 
     $admin = new Admin('thanh','211346', 'nhatthanh2012@gmail.com', 123456, 2);
     $admin->login();
-    $admin->setEmail('nhatthanh2012@gmail.com');   
-   
+    $admin->setEmail('nhatthanh2012@gmail.com');
+    
+   echo '<br>'.$admin->getEmail();
 ?>

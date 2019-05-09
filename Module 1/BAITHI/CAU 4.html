@@ -17,23 +17,21 @@
 <body>
     <canvas id='picture' width="500" height="300"></canvas>
     <script>
+        function Rectanggle(toaDo_x, toaDo_y, _width, _height) 
+        {
+            this.x = toaDo_x;
+            this.y = toaDo_y;
+            this.width = _width;
+            this.height = _height;
 
-        function Rectanggle(x, y, width, height) {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
-
-            this.render = function () {
+            this.render = function () 
+            {
                 var canvas = document.getElementById('picture');
                 var context = canvas.getContext('2d');
                 context.fillStyle = '#000000';
                 context.fillRect(this.x, this.y, this.width, this.height);
-
-
             }
         }
-
         var rectanggle = new Rectanggle(10, 10, 200, 100);
         rectanggle.render();
     </script>

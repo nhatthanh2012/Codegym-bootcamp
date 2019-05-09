@@ -1,22 +1,23 @@
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 var ball = {
-    x: 20,
-    y: 20,
-    dx: 4,
-    dy: 6,
-    radius: 20,
-    score: 0,
-};
-var paddle = {
-    speed: 20,
-    width: 150,
-    height: 15,
-    x: 0,
-    y: canvas.height - 15,
-    isMovingLeft: false,
-    inMovingRight: false,
-};
+            x: 20,
+            y: 20,
+            dx: 4,
+            dy: 6,
+            radius: 20,
+            score: 0,
+        };
+var paddle = 
+        {
+            speed: 20,
+            width: 150,
+            height: 15,
+            x: 0,
+            y: canvas.height - 15,
+            isMovingLeft: false,
+            inMovingRight: false,
+        };
 
 var isGameOver = false;
 document.addEventListener('keyup', function (event) {
@@ -75,7 +76,7 @@ function xuLyVaCham_paddle() {
         ball.x - ball.radius <= paddle.x + paddle.width &&
         ball.y + ball.radius >= canvas.height - paddle.height) {
         ball.dy = -ball.dy;
-        ball.score++
+        ball.score++;
     }
 
 }

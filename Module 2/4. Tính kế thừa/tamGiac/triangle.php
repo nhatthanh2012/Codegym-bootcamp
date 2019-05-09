@@ -6,15 +6,14 @@
         {
             $this->color = $color;
         }
-
-    }
-    
+    }    
 
     class Triangle extends Shape
     {
         public $side1;
         public $side2;
         public $side3;
+
         function __construct($color,$side1,$side2,$side3){
             parent::__construct($color);
             $this->side1 = $side1;
