@@ -12,11 +12,12 @@ class FizzBuzz
     {
         $isFizz = $isFizz === 0;
         $isBuzz = $isBizz === 0;
-        if($isFizz == 0 && $isBizz == 0) {
+        
+        if($isFizz && $isBizz) {
             $this->status =  "FizzBuzz";
-        } elseif ($isFizz == 0) {
+        } elseif ($isFizz) {
             $this->status = "Fizz";
-        } elseif ($isBizz == 0) {
+        } elseif ($isBizz) {
             $this->status = "Buzz";
         } else {
             $this->status =  $number."";

@@ -8,9 +8,15 @@
 class TennisGame
 {
     public $score = '';
-    public function getScore($playerName1, $playerName2, $playerScore1, $playerScore2)
-    {
+    public function getScore($array)
+    {   
+        $array= array();
+        $playerName1 = array[0];
+        $playerName2 = array[1];
+        $playerScore1 = array[2];
+        $playerScore2 = array[3];
         $tempScore=0;
+        
         if ($playerScore1==$playerScore2) {
             switch ($playerScore1)
             {
@@ -42,13 +48,16 @@ class TennisGame
             {
                 ($minusResult ==-1) 
                 {
-                $this->score ="Advantage player2";
+                    $this->score ="Advantage player2";
                 }
                    
             } 
             else if
             {
-                ($minusResult>=2) $this->score = "Win for player1";
+                ($minusResult>=2)
+                {
+                    $this->score = "Win for player1";
+                } 
             } 
             else
             {
