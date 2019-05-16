@@ -1,4 +1,18 @@
-<?php    
+<?php  
+    class Customer
+    {
+        public $id;
+        public $name;
+        public $email;
+        public $address;
+        public function __construct($name, $email, $address)
+        {
+            $this->name = $name;
+            $this->email = $email;
+            $this->address = $address;
+        }
+    }
+
     class CustomerDB
     {
         private $hostname = 'localhost';
@@ -22,57 +36,60 @@
             return $this->conn;
         }
 
-        public function _execute($sql)
+        public function insertData($name, $email, $address)
         {
-           $this->result = $this->conn->prepare($sql);      
-           $this->result->execute();
-           return $this->result;           
+            $sql = "INSERT INTO customers(ID, Name, Email, Address) VALUES (null,'$name', '$email', '$address')";
+            $this->result = $this->conn->prepare($sql);           
+            return $this->result->execute();
         }
 
-        public function getData()
+        
+        public function getDataId($id)
         {
-            if($this->result)
-            {
-                $this->result->setFetchMode(PDO::FETCH_ASSOC);
-                $data = $this->result->fetchAll();                
-            }else
-            {
-                $data = 0;
-            }
-            return $data;
+            $sql = "SELECT * FROM customers WHERE id = $id";
+            $statement = $this->conn->prepare($sql);            
+            $statement->execute();
+            
+            $row = $statement->fetch();
+            $customer = new Customer($row['Name'], $row['Email'], $row['Address']);
+            $customer->id = $row['ID'];
+            return $customer;
         }
 
         public function getAllData()
         {
-            if(!$this->result)
-            {
-                $data = 0;
-            } else
-            {
-                while($datas = $this->getData())
-                {
-                    $data[] = $data;
-                }
-            }
-            return $data;
-        }
+            $sql = "SELECT * FROM customers";
+            $statement = $this->conn->prepare($sql);
 
-        public function insertData($name, $email, $address)
-        {
-            $sql = "INSERT INTO customers VALUES(null, '$name', '$email', '$address')";
-            return _execute($sql);
-        }
+            $statement->execute();
+            
+            $this->result = $statement->fetchAll();
+            
+            $customers= [];
+            foreach ($this->result as $row) 
+            {
+                $customer = new Customer($row['Name'], $row['Email'], $row['Address']);
+                $customer->id = $row['ID'];
+                
+                $customers[] = $customer;
+            }            
+            return $customers;
+        }       
 
         public function updateData($id,$name, $email, $address)
         {
             $sql = "UPDATE customers SET Name = '$name', Email = '$email' , Address = '$address' WHERE ID = $id";
-            return _execute($sql);
+            $this->result = $this->conn->prepare($sql);
+            $this->result->execute();
+            return $this->result;
         }
 
-        public function deleteData()
+        public function deleteData($id)
         {
             $sql = "DELETE FROM customers WHERE ID = $id";
-            return _execute($sql);
+            $this->result = $this->conn->prepare($sql);
+            $this->result->execute();
+            return $this->result;
 
         }
     }

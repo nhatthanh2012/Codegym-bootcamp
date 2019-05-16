@@ -61,7 +61,7 @@
         {
             $categoryCode = $_POST['categoryCode'];
             $categoryName = $_POST['categoryName'];
-            $sql = "INSERT INTO categories VALUE($categoryCode, $categoryName) ";
+            $sql = "INSERT INTO categories VALUE('$categoryCode', '$categoryName') ";
             mysqli_query($connect, $sql) or die ('fail');
             header(location:quanlythivien.php);
         }

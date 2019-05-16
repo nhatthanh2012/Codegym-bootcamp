@@ -1,7 +1,7 @@
 <?php 
-    require "model/customerDB.php";
-    $db = new CustomerDB;
-    $db->connect();
+    require "Model/customerDB.php";
+    $database = new CustomerDB;
+    $database->connect();
 
     if(isset($_GET['controller']))
     {
@@ -15,7 +15,7 @@
     {
         case 'khach-hang':
         {
-            require_once('controller/index.php');
+            require_once('controller/customerController.php');
         }
     }
 ?>
