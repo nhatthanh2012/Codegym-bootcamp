@@ -37,8 +37,7 @@
             {
                 echo 'fail connection';
             }
-        }       	
-
+        }       
 
         function register($username,$password, $fullname, $birthday, $email) // them
         {
@@ -56,6 +55,18 @@
           
         }       
 
+        public function getDataId($id)
+        {
+            $sql = "SELECT * FROM customers WHERE id = $id";
+            $statement = $this->conn->prepare($sql);            
+            $statement->execute();
+            
+            $row = $statement->fetch();
+            $user = new User($row['username'], $row['password'], $row['fullname'], 
+            $row['birthday'], $row['role'], $row['email']);
+            $user->id = $row['id'];
+            return $user;
+        }
         function getAllUser() 
         {
             $sql = "SELECT * FROM users";
@@ -76,18 +87,18 @@
             return $users;  
         }
 
-        function editUser($id, $password, $fullname, $birthday, $email) // sua
+        function editUser($id, $username, $password, $fullname, $birthday,  $email) // sua
         {
-            $sql = "UPDATE users SET password= '$password', fullname = '$fullname',
+            $sql = "UPDATE users SET username = '$username', password= '$password', fullname = '$fullname',
                     birthday= $birthday, email= $email WHERE $id";
             $this->result = $this->conn->prepare($sql);
             $this->result->execute();
             return $this->result;
         }
 
-        function deleteUser($username)
+        function deleteUser($id)
         {
-            $sql = "DELETE FROM users WHERE username = $username";
+            $sql = "DELETE FROM users WHERE username = $id";
             $this->result = $this->conn->prepare($sql);
             $this->result->execute();
         }

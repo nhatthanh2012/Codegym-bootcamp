@@ -1,7 +1,6 @@
 <div class="col-12">
           <h1>ĐĂNG KÝ USER MỚI</h1>
 </div>
-
 <a href="index.php?controller=user&page=login">Register</a>></a>
 <table>
 <form action="" method = 'post'>
@@ -27,8 +26,7 @@
     </tr>
     <tr>        
         <td colspan = '2'><input type="submit" value = 'Register' name = 'register'></td>
-    </tr>
-    
+    </tr>    
 </form>
 </table>
 

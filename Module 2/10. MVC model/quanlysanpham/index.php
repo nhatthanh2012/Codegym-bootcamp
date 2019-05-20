@@ -1,7 +1,7 @@
 <?php
-    require "Model/DBuser.php";
-    $database = new DataUser();
-    $database->connect();
+    require "Model/DBproduct.php";
+    $database = new DBproducts();
+    $database->connectDB();
 
     if(isset($_GET['controller']))
     {
@@ -14,7 +14,8 @@
 
     switch($controller)
     {
-        case 'user': 
-            require_once "Controller/ControllerUser.php";
+        case 'product':
+            require "Controller/controllerProduct.php";
     }
 ?>
+

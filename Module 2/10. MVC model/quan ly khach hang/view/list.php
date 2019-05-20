@@ -23,6 +23,8 @@
               <a href="index.php?controller=khach-hang&action=edit&id=<?php echo $customer->id;?>">SỬA</a>
               <a onclick ="return confirm('ban co chac muon xoa khong') " href="index.php?controller=khach-hang&action=delete&id=<?php echo $customer->id;?>">XÓA</a>
           </td>
+        </tr>
     <?php endforeach; ?>
+    
   </tbody>
 </table>
