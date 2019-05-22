@@ -1,0 +1,1 @@
+<p>chào bạn <?php echo $hoten?>, đây là trang view của <?php echo $admin ?></p>
