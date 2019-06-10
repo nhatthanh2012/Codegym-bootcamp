@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-    protected $table = 'customers';
-
-    public function cities()
+    protected $table = 'customer';
+    public function city()
     {
-        return $this->belongsTo('App\City', 'city_id');
+        return $this->belongsTo('App\City','id_city', 'id');
     }
 }

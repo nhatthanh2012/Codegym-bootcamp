@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
-    protected $table = 'cities';
-    
+    protected $table = 'city';
+
     public function customers()
     {
-        return $this->hasMany('App\Customer');
-    }        
+        return $this->hasMany('App\Customer', 'id_city', 'id');
+    }
 }

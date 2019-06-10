@@ -5,60 +5,79 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Customer;
 use App\City;
-
 class CustomerController extends Controller
 {
-    function index()
+    public function index()
     {
-       
-       $customers = Customer::all();
-                         
-        return view('customer.list', compact('customers'));
+        $customers = Customer::paginate(5);
+        $cities = City::all();    
+        return view('customer.list', compact('customers', 'cities'));
     }
 
-    function create()
+    public function create()
     {
-        $cities = City::All();
+        $cities = City::all();
         return view('customer.create', compact('cities'));
     }
 
-    function store()
+    public function store()
     {
-        $customer = new Customer;
-        $city = new City;
-        $customer->fullname = request('fullname');
+        $customer = new customer;
+        $customer->name = request('name');
         $customer->dob = request('dob');
         $customer->email = request('email');
-        $customer->city_id = request('cityid');
-
+        $customer->id_city = request('id_city');
         $customer->save();
-        return redirect('customer/index');
+        return redirect()->back()->with('success', 'Đã thêm');
     }
 
-    function edit($id)
+    public function edit($id)
     {
-        $customer = Customer::findOrFail($id); 
-        $cities = City::All();           
+        $cities = City::all();
+        $customer = Customer::find($id);
         return view('customer.edit', compact('customer','cities'));
     }
 
-    function update($id)
+    public function update($id)
     {
-       $customer = Customer::findOrFail($id);
-       $customer->fullname = request('fullname');
-       $customer->dob = request('dob');
+        $customer = customer::find($id);
+        $customer->name = request('name');
+        $customer->dob = request('dob');
         $customer->email = request('email');
-        $customer->city_id = request('cityid');
-
-      $customer->save();
-      return redirect('customer/index');
+        $customer->id_city = request('id_city');
+        $customer->save();
+        return redirect()->back()->with('success', 'Đã chỉnh sửa');
     }
+   
 
-    function delete($id)
+    public function delete($id)
     {
-        $customer = Customer::findOrFail($id);
+        $customer = Customer::find($id);        
         $customer->delete();
-
-        return redirect('customer/index');
+        return redirect()->back()->with('success', 'Đã xóa');
     }
+
+    public function search()
+    {
+        $key = request('key');
+        $customers = Customer::where('name', 'like', '%'.$key.'%')->paginate(5);   
+        $cities = City::all();    
+        return view('customer.list', compact('customers', 'cities'));
+    }
+
+    public function filterByCity(Request $request)
+    {
+        $idCity = $request->id_city;
+
+        //kiem tra city co ton tai khong
+        $cityFilter = City::find($idCity);
+        //lay ra tat ca customer cua cityFiler
+        $customers = Customer::where('id_city', $cityFilter->id)->paginate(5);
+        $totalCustomerFilter = count($customers);
+
+        $cities = City::all();
+
+        return view('customer.list', compact('customers', 'cities', 'totalCustomerFilter', 'cityFilter'));
+    }
+
 }

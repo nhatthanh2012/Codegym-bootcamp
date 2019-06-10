@@ -3,52 +3,48 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customer;
 use App\City;
 
 class CityController extends Controller
 {
-    function index()
-    {        
-        $cities = City::All();     
+    public function index()
+    {
+        $cities = City::paginate(5);
         return view('city.list', compact('cities'));
     }
 
-    function create()
+    public function create()
     {
         return view('city.create');
     }
 
-    function store()
+    public function store()
     {
         $city = new City;
-        $city->name_province = request('nameprovince');
-        
-
+        $city->name = request('name');
         $city->save();
-        return redirect('city/index');
+        return redirect()->back()->with('success', 'Đã thêm');
     }
 
-    function edit($id)
+    public function edit($id)
     {
-        $city = City::findOrFail($id);
-       return view('city/edit', compact('city'));
+        $city = City::find($id);
+        return view('city.edit', compact('city'));
     }
 
-    function update($id)
+    public function update($id)
     {
-        $city = City::findOrFail($id);       
-        $city->name_province = request('nameprovince');
-
+        $city = City::find($id);
+        $city->name = request('name');
         $city->save();
-        return redirect('city/index');
+        return redirect()->back()->with('success', 'Đã sửa');
     }
+   
 
-    function delete($id)
+    public function delete($id)
     {
-        $city = City::findOrFail($id);
+        $city = City::find($id);        
         $city->delete();
-        return redirect('city/index');
+        return redirect()->back()->with('success', 'Đã xóa');
     }
-
 }

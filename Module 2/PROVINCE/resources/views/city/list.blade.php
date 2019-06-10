@@ -1,29 +1,47 @@
-<h1>LIST PROVINCE</h1>
-<table border = '1'>
-    <tr>
-        <th>STT</th>
-        <th>ID</th>
-        <th>NAME PROVINCE</th>   
-        <th>A MOUNT OF CUSTOMER</th>
-        <th>ACTION</th>     
-    </tr>
-    <tbody>
-        @if(count($cities)=== 0)
-            <tr>khong co du lieu</tr>
-        @else 
-            @foreach($cities as $key=>$city)
+@extends('master')
+@section('title', 'Danh sách Tỉnh')
+@section('content')
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Danh sách tỉnh</h2>
+        </div>
+        <div class="col-12">
+            @if (Session::has('success'))
+                <p class="text-danger">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    {{ Session::get('success') }}
+                </p>
+            @endif
+        </div>
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <td>{{ ++$key }}</td>
-                    <td>{{ $city->id }}</td>
-                    <td>{{ $city->name_province }}</td>
-                    <td>{{ count($city->customers) }}</td>
-                    <td>
-                        <a href=" {{ route('city.create') }}">ADD</a>
-                        <a href="{{ route('city.edit', $city->id) }}">EDIT</a>
-                        <a href="{{ route('city.delete', $city->id) }}" onclick = "return confirm('are sure to delete')">DELETE</a>
-                    </td>
+                    <th scope="col">#</th>
+                    <th scope="col">Tỉnh</th>                    
+                    <th></th>
+                    <th></th>
                 </tr>
-            @endforeach
-        @endif
-    </tbody>
-</table>
+                </thead>
+                <tbody>
+                @if(count($cities) == 0)
+                    <tr>
+                        <td colspan='4'> Không có dữ liệu</td>
+                    </tr>
+                @else
+                    @foreach($cities as $key => $city)
+                    <tr>
+                        <th scope="row">{{ ++$key }}</th>
+                        <td>{{ $city->name }}</td>                                          
+                        <td><a href="{{ route('city.edit', $city->id) }}">Edit</a></td>
+                        <td><a href="{{ route('city.delete', $city->id) }}" class="text-danger" onclick="return confirm('Bạn có chắc muốn xóa?')">xóa</a></td>
+                    </tr>
+                    @endforeach
+                @endif 
+                </tbody>
+            </table>
+            <div>{{ $cities->links() }}</div>
+            <a href="{{ route('city.create') }}" class="btn btn-primary">Thêm mới</a>
+        </div>
+    </div>
+@endsection
