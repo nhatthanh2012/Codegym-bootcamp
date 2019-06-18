@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo menu ngang</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: sans-serif;
+            color:rgb(46, 38, 38);
+        }        
+        .navbar ul {
+            position: fixed;
+            list-style-type: none;
+            background: chocolate;
+            text-align: center;
+        }
+        .navbar ul li{            
+            color: blue;
+            display: inline-table;
+            width: 330px;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+        }
+        .navbar ul li a {
+            color: rgb(20, 201, 65);
+            text-decoration: none;
+            display: block;
+        }
+        .navbar ul li a:hover{
+            background: rgba(27, 29, 168, 0.048);
+            color: #333;
+        }
+        .navbar ul li > .sub-menu{
+            display: none;
+        }
+        .navbar ul li:hover .sub-menu{
+            display: block;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a>
+                <ul class="sub-menu">
+                    <li><a href="#">news 1</a></li>
+                    <li><a href="#">news 2</a></li>
+                    <li><a href="#">news 3</a></li>
+                    <li><a href="#">news 4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li> 
+        </ul>      
+    </div>
+    <div class="main">
+        <h1>Fixed top menu</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top of the page whilescrolling</h2>
+        <script>
+        for(var i = 0; i<100; i++){
+            document.write('Some text some text some text some text..');
+            document.write('<br>');
+        }
+        </script>      
+    </div>
+</body>
+</html>

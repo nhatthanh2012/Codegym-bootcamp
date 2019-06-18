@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mục lục truyện ngắn</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }    
+    body{
+        font-family: Arial, sans-serif;
+        background: papayawhip;
+        color: black;
+        font-size: 15px;
+    }
+    #menu {
+        margin: 20px;  
+    }
+    #menu ul {
+        list-style-type: none;
+        background: #1f568b;
+        width: 250px;
+        padding: 0px;
+    }
+    #menu ul li{
+        height: 40px;       
+        line-height: 40px;
+        width: auto;
+        border-bottom: 1px solid #e8e8e8; 
+        padding: 10px 1em;
+        margin: 10px;
+        position: relative;
+    }
+    #menu ul li a {
+        text-decoration: none;
+        color: white;
+    }
+    #menu ul li:hover {
+        background: #742e2e;
+    }
+    #menu ul li > .sub-menu{
+        position: absolute;        
+        left: 230px;
+        top: 0;
+        display: none;
+    }
+    #menu ul li:hover > .sub-menu{
+        display: block;        
+        top: 0;
+    }
+</style>
+<body>
+    <div id="menu">Danh mục truyện ngắn
+        <ul>
+            <li><a href="#">Truyện trinh thám</a></li>
+            <li><a href="#">Tiểu thuyết</a></li>
+            <li><a href="#">Truyện cổ tích</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Cổ tích Việt Nam</a></li>
+                    <li><a href="#">Cổ tích thế giới</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Truyện ngụ ngôn</a></li>
+            <li><a href="#">Truyện cười</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Miền bắc</a></li>
+                    <li><a href="#">Miền nam</a></li>
+                    <li><a href="#">Miền trung</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

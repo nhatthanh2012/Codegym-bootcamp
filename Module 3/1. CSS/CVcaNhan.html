@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CV cá nhân</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        background: palevioletred; 
+        font-family: sans-serif;
+        font-size: 15px;               
+    } 
+    #menu ul{        
+        background: yellowgreen;
+        list-style-type: none;
+        width: 250px;
+        padding: 0px;
+    }
+    #menu ul li {
+        width: auto;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #e8e8e8;
+        padding: 0 1em;
+        position: relative;
+    }
+    #menu ul li:hover{
+        background: #ccddee;                
+    }
+    #menu ul li a {
+        text-decoration: none;
+        color: rgb(45, 45, 160);
+        font-weight: bold;
+        display: block;        
+    }
+    #menu ul li > .sub-menu{
+        display: none; 
+        left: 250px;
+        top: 0px;
+        position: absolute;
+    }
+    #menu ul li:hover > .sub-menu{
+        display: block;        
+    }
+
+</style>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Họ tên</a></li>
+            <li><a href="#">Địa chỉ</a></li>
+            <li><a href="#">Số điện thoại</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Di động</a></li>
+                    <li><a href="#">Nhà riêng</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Email</a></li>
+            <li><a href="#">Hình ảnh</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Hình 1</a></li>
+                    <li><a href="#">Hình 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Học vấn</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Ngắn hạn</a></li>
+                    <li><a href="#">Dài hạn</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Bằng cấp</a></li>
+            <li><a href="#">Kinh nghiệm</a></li>
+        </ul>
+    </div>
+</body>
+</html>

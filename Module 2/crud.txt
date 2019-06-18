@@ -1,0 +1,96 @@
+1. create database
+composer create-project --prefer-dist laravel/laravel blog
+
+2. connect database (.env)
+
+3. make a table by migration ->(\database\migration)
+syntax migration : php artisan make:migration create_users_table
+-> make table
+make foreign key:    ->  $table->foreign('city_id')->references('id')->on('cities');
+$table->integer('user_id')->unsigned();
+execute: php artisan migrate 
+
+4. seeding ->(/database/seeds)
+php artisan make:seeder UsersTableSeeder
+DB:: table('nameTable')-> insert($array)
+// back ->DatabaseSeeder.php
+execute : php artisan db:seed
+
+5. create Model -> (App\fileModel)
+syntax : php artisan make:model nameOfModel
+ protected $table = 'customers';
+tao moi quan he giua 2 table
+
+6. CRUD
+make controller:  php artisan make:controller
+class CityController extends Controller
+{
+    public function index()
+    {
+        $cities = City::paginate(5);
+        return view('city.list', compact('cities'));
+    }
+
+    public function create()
+    {
+        return view('city.create');
+    }
+
+    public function store()
+    {
+        $city = new City;
+        $city->name = request('name');
+        $city->save();
+        return redirect()->back()->with('success', 'Ðã thêm');
+    }
+
+    public function edit($id)
+    {
+        $city = City::find($id);
+        return view('city.edit', compact('city'));
+    }
+
+    public function update($id)
+    {
+        $city = City::find($id);
+        $city->name = request('name');
+        $city->save();
+        return redirect()->back()->with('success', 'Ðã s?a');
+    }
+   
+
+    public function delete($id)
+    {
+        $city = City::find($id);        
+        $city->delete();
+        return redirect()->back()->with('success', 'Ðã xóa');
+    }
+}
+
+store()
+	$attribute = request->all();
+	$post = Post::($attribute) (post là model)
+	return redirect(index)
+edit (Post $post)
+	return view('edit', compact('post')
+update (Post $post)
+	$attribute = request(' ', ' ')
+	Product::update($attribute)
+	return redirection(' ')
+GROUP
+Route::group(['prefix'=>'book'], function()
+{
+    Route::get('/index', 'BookController@index')->name('book.index');
+    Route::get('/create', 'BookController@create')->name('book.create');
+    Route::post('/store', 'BookController@store')->name('book.store');
+    Route::get('/edit/{id}', 'BookController@edit')->name('book.edit');
+    Route::post('/update/{id}', 'BookController@update')->name('book.update');
+    Route::get('/delete/{id}', 'BookController@delete')->name('book.delete');
+    Route::get('/search', 'BookController@search')->name('book.search');
+    Route::get('/show/{id}', 'BookController@show')->name('book.show');
+});
+
+##syntax :
+App\providers\AppServiceProvider.php 
+use Illuminate\Support\Facades\Schema;
+ boot()->	 Schema::defaultStringLength(191);
