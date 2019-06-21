@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>gallery</title>
+    <style>
+        .row{
+            margin: 10px;        
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .responsive .gallery {
+            height: 100%;
+            width: auto;
+            border: 1px salmon;
+        }
+        .responsive .gallery:hover {
+            background: olive;
+        }
+        .gallery a {
+            width: auto;
+            height: 100%;
+        }
+        .gallery{
+            padding: 0px 6px;
+            float: left;
+            width: 25%;
+        }        
+        footer{
+            clear: both;
+        }
+        @media only screen and (max-width:700px) {
+            .responsive{
+                width: 50%;
+                margin: 6px 0px;
+            }                  
+        }
+        @media only screen and (max-width:500px) {
+            .responsive{
+                width: 100%;
+                margin: 6px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="height: auto">
+        <header class="row">
+            <h1>Responsive Image Gallery</h1>
+            <h5>Resize the browser window to see the effect.</h5>
+        </header>
+
+
+        <div class="responsive">
+            <div class="gallery">
+                <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
+                    <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
+                        alt="" height="300px" width="300px">
+                </a>
+                <p>Add a description of the image here</p>
+            </div>
+            <div class="gallery">
+                <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
+                    <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
+                        alt="" height="300px" width="300px">
+                </a>
+                <p>Add a description of the image here</p>
+            </div>
+            <div class="gallery">
+                <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
+                    <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
+                        alt="" height="300px" width="300px">
+                </a>
+                <p>Add a description of the image here</p>
+            </div>
+            <div class="gallery">
+                <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
+                    <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
+                        alt="" height="300px" width="300px">
+                </a>
+                <p>Add a description of the image here</p>
+            </div>
+        </div>
+
+
+        <footer class="panel panel-default">
+            <div class="panel-heading text-left">
+                <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger
+                    than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show
+                    two images side by side. For screens smaller than 500px, the images will stack vertically (100%).
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
