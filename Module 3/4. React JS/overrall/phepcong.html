@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id='root'></div>
+    <div id='root1'></div>
+    <script type="text/babel">
+      class Phepcong extends React.Component {
+          tinhTong = () => {
+              var so1 = parseInt(this.refs.num1.value);
+              var so2 = parseInt(this.refs.num2.value);             
+              var tong = so1 + so2;
+              document.getElementById('root1').innerHTML = tong;
+          }
+          render() {
+              return (
+                  <div>                     
+                     <div className="input-group">
+                         <input type="text" className="form-control" ref='num1' />
+                         <input type="text" className="form-control" ref='num2' />
+                        <button type="button" className="btn btn-default" onClick={this.tinhTong}>Tổng</button>                        
+                     </div>                     
+                  </div>
+              );
+          }
+      }
+      ReactDOM.render(<Phepcong />, document.getElementById('root'));
+
+    </script>
+</body>
+</html>
