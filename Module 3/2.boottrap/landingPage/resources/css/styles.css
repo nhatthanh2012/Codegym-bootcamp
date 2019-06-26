@@ -13,7 +13,9 @@ html{
     background: #ffffff;
     text-rendering: optimizeLegibility;
 }
-
+body {
+    overflow-x: hidden;
+}
 /* ------------------------------- */
 /* --------------RESUSABLE COMPONENT----------------- */
 /* ------------------------------- */

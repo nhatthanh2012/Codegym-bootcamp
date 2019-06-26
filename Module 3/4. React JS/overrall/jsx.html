@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>JSX</title>
+</head>
+<body>
+    <div id='root-1'></div>
+    <div id='root-2'></div>
+    <div id='root-3'></div>
+    <div id='root-4'></div>
+    <script type="text/babel">
+        // root 1
+      const name = 'thanh';
+      const element =<h1>hello, {name}</h1>;
+      ReactDOM.render(
+          element, 
+          document.getElementById('root-1')
+      );
+      
+      // root 2 
+        const user = {
+            firstname : 'Harry',
+            lastname: 'Porter',
+            image: <img src="http://static.ybox.vn/2018/3/12/56f9a09a-25f6-11e8-afd4-2e995a9a3302.png"/>
+        }
+
+        function formatName(user){
+            return user.firstname +' '+ user.lastname;
+        }
+        const element2 = (
+            <div >
+                <h1>Hello, {formatName(user)}</h1>
+            </div>
+        );
+        ReactDOM.render(
+            element2,
+            document.getElementById('root-2')
+        );
+        // root 3 
+        function getGreeting(user){
+            if (user) {
+                return <h2> hello, {formatName(user)} </h2> 
+            } else {
+               return <h2> hello, stranger </h2> 
+            }
+        }
+        ReactDOM.render(
+            getGreeting(user),
+            document.getElementById('root-3')
+        );
+       
+        // root 4 
+       
+        const  hinhanh = (
+                    <div> 
+                        <h3>name : {user.name} </h3>
+                         <div> { user.image } </div>
+                    </div> 
+                    );
+        ReactDOM.render(
+            hinhanh, document.getElementById('root-4')
+        );
+      </script>   
+      
+</body>
+</html>

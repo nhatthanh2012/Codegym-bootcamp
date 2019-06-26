@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <style>
+        .rectangle{
+            background: #d81a1a; 
+            height: 100px; 
+            width: 200px; 
+            position: absolute;
+            /* margin-left: 80%; */
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $('#hide').click(function(){
+                $('p').hide()
+            });
+        });
+        $(document).ready(function(){
+            $('#show').click(function(){
+                $('p').show()
+            });
+        });
+        $(document).ready(function(){
+            $('#animation').click(function(){
+                // $('.rectangle').animate({left:'550px'});
+                $('.rectangle').animate({right:'550px'});
+                $('.rectangle').animate({height:'550px'});
+                $('.rectangle').animate({width:'800px'});
+                $('.rectangle').animate({width:'800px'});
+            });
+        });
+        $(document).ready(function(){
+            $('#hide2').click(function(){
+                $('.rectangle').hide()
+            });
+        });
+        $(document).ready(function(){
+            $('#show2').click(function(){
+                $('.rectangle').show()
+            });
+        });
+    </script>
+    <p>if you click "hide", i will disappear</p>
+    <button id="hide">Hide</button>
+    <button id="hide2">Hide2</button>
+    <button id="show">Show</button>
+    <button id="show2">Show2</button>
+    <button id="animation">Animation</button>
+    <br><br>
+    <div class="rectangle"></div>
+
+</body>
+</html>

@@ -5,57 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>gallery</title>
     <style>
-        .row{
-            margin: 10px;        
-        }
+       
         *{
-            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;           
+        }      
+        .responsive .gallery{
+            display: inline-block;
+            margin-right: 0px;
+            width: 325px;
+            transition: all 2s;
         }
-        .responsive .gallery {
-            height: 100%;
-            width: auto;
-            border: 1px salmon;
+        .responsive .gallery:hover{
+            transform: scale(1.2);
+        } 
+        .responsive .gallery img {
+            height: auto;
+            width: 100%;
         }
-        .responsive .gallery:hover {
-            background: olive;
+        .description {
+            text-align: center;
+            color: rgb(100, 97, 97);
         }
-        .gallery a {
-            width: auto;
-            height: 100%;
-        }
-        .gallery{
-            padding: 0px 6px;
-            float: left;
-            width: 25%;
-        }        
-        footer{
-            clear: both;
+        @media only screen and (max-width:1200px) {
+           .responsive .gallery{
+               width: 20%;
+               height: 120px;
+           }
         }
         @media only screen and (max-width:700px) {
-            .responsive{
-                width: 50%;
-                margin: 6px 0px;
-            }                  
+            .responsive .gallery {
+                width: 40%;
+            }  
         }
         @media only screen and (max-width:500px) {
-            .responsive{
+            .responsive .gallery {
                 width: 100%;
-                margin: 6px 0px;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid" style="height: auto">
-        <header class="row">
+    <div class="container-fluid">
+        <header class="head">
             <h1>Responsive Image Gallery</h1>
             <h5>Resize the browser window to see the effect.</h5>
+            
         </header>
 
 
@@ -63,30 +64,30 @@
             <div class="gallery">
                 <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
                     <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
-                        alt="" height="300px" width="300px">
+                        alt="" >
+                </a>
+                <p class="description">Add a description of the image here</p>
+            </div>
+            <div class="gallery">
+                <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
+                    <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
+                        alt="" >
                 </a>
                 <p>Add a description of the image here</p>
             </div>
             <div class="gallery">
                 <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
                     <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
-                        alt="" height="300px" width="300px">
+                        alt="" >
                 </a>
-                <p>Add a description of the image here</p>
+                <p class="description">Add a description of the image here</p>
             </div>
             <div class="gallery">
                 <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
                     <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
-                        alt="" height="300px" width="300px">
+                        alt="" >
                 </a>
-                <p>Add a description of the image here</p>
-            </div>
-            <div class="gallery">
-                <a href="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg">
-                    <img src="https://thegioitranhviet.com/wp-content/uploads/2018/09/Tranh-Dan-Tuong-3D-Phong-Canh-117.jpg"
-                        alt="" height="300px" width="300px">
-                </a>
-                <p>Add a description of the image here</p>
+                <p class="description">Add a description of the image here</p>
             </div>
         </div>
 
