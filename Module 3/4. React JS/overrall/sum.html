@@ -26,13 +26,14 @@
     <div id='root'></div>    
     <div id='root1'></div>   
 
-    <script type="text/babel">          
-      class Sum extends React.Component {       
+    <script type="text/babel">  
+            
+      class Sum extends React.Component {  
             increase = ()=>{                
                 document.getElementById('root1').innerHTML = this.refs.num.value++;                
             }
             decrease = ()=>{
-                document.getElementById('root1').innerHTML = this.refs.num.value--;  
+                document.getElementById('root1').innerHTML = --this.refs.num.value;  
             }
           render() {          
               return (
@@ -43,6 +44,7 @@
                   </div>
               );
           }
+         
       }
       ReactDOM.render(<Sum />, document.getElementById('root'));
     </script>

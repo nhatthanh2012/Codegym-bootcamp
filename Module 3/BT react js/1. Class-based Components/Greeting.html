@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id='root'></div>
+    <script type="text/babel">
+      class Greeting extends React.Component {
+        render() {
+            var date = new Date();
+            var hour = date.getHours() 
+            var timeOfDay = '';
+            var image = "";
+            if(hour < 12) {
+                timeOfDay = "morning";
+                image = "http://www.tindich.com/wp-content/uploads/sites/3/2014/03/sunnyday-1024x640.jpg"
+            } 
+            else if(hour > 12 && hour < 17){
+                timeOfDay = "afternoon";
+                image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-djp5XohMHCTw0v-GyXMmOnYa5qSSLxC_6qlCyGsjOl2dPDC6"
+            }
+            else {
+                timeOfDay = "evening";
+                image = "https://kingtravel.tv/upload/tin-tuc/buoi-toi-o-da-nang-nen-di-dau.jpg"
+            }            
+            return (
+                <div>
+                    <p> Good {timeOfDay} to you sir and madam </p>
+                    <img src={image} alt="photo" />
+                </div>
+            );
+        }
+    }
+    ReactDOM.render(<Greeting />, document.getElementById('root')); 
+
+    </script>
+</body>
+</html>

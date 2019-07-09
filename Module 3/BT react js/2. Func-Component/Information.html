@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+    <style>
+        img {
+            width: 250px;
+            height: 300px;
+        }
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id='root'></div>
+    <script type="text/babel">
+    function Information() {             
+            return (
+                <div>
+                    <h1>Gấu bông online</h1>
+                    <p>Đây là hệ thống của hàng của chúng tôi</p>
+                    <ol>
+                        <li>
+                            <p>Huế</p>
+                            <img src="http://cafefcdn.com/thumb_w/650/2018/thanh-pho-hue-1514948134123.jpg" />
+                        </li>
+                        <li>
+                            <p>Sài gòn</p>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRbjqneK2irtfX6jHHjuwsctioMwZ-JboGkP7L4PZylj-IH_k0" />
+                        </li>
+                        <li>
+                            <p>Hà Nội</p>
+                            <img src="http://downtownpainesville.org/wp-content/uploads/2018/07/ha-noi-co-bao-nhieu-quan8.jpg" />
+                        </li>                       
+                    </ol>
+                </div>
+            );        
+    }
+    ReactDOM.render(<Information />, document.getElementById('root'));
+
+    </script>
+</body>
+</html>
